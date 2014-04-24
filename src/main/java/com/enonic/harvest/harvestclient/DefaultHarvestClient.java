@@ -3,7 +3,7 @@ package com.enonic.harvest.harvestclient;
 import com.enonic.harvest.harvestclient.exceptions.HarvestClientException;
 import com.enonic.harvest.harvestclient.exceptions.MissingParameterException;
 import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByUserParameters;
-import com.enonic.harvest.harvestclient.parameters.GetLatestInvoicesParameters;
+import com.enonic.harvest.harvestclient.parameters.GetRecentInvoicesParameters;
 import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByProjectParameters;
 import com.enonic.harvest.harvestclient.models.*;
 import org.apache.http.NameValuePair;
@@ -271,7 +271,7 @@ class DefaultHarvestClient
     }
 
     @Override
-    public InvoiceCollection getRecentInvoices(GetLatestInvoicesParameters params)
+    public InvoiceCollection getRecentInvoices(GetRecentInvoicesParameters params)
             throws HarvestClientException
     {
         List<NameValuePair> urlParams = new ArrayList<NameValuePair>();

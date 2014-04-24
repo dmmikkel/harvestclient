@@ -2,7 +2,7 @@ package com.enonic.harvest.harvestclient.parameters;
 
 import java.util.Date;
 
-public class GetLatestInvoicesParameters
+public class GetRecentInvoicesParameters
 {
     public Integer page;
     public Date fromDate;

@@ -3,7 +3,7 @@ package com.enonic.harvest.harvestclient;
 import com.enonic.harvest.harvestclient.exceptions.HarvestClientException;
 import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByProjectParameters;
 import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByUserParameters;
-import com.enonic.harvest.harvestclient.parameters.GetLatestInvoicesParameters;
+import com.enonic.harvest.harvestclient.parameters.GetRecentInvoicesParameters;
 import com.enonic.harvest.harvestclient.models.*;
 
 import java.util.Date;
@@ -70,7 +70,7 @@ public interface HarvestClient
     TaskAssignmentCollection getTaskAssignments(int projectId, Date updatedSince)
             throws HarvestClientException;
 
-    InvoiceCollection getRecentInvoices(GetLatestInvoicesParameters params)
+    InvoiceCollection getRecentInvoices(GetRecentInvoicesParameters params)
             throws HarvestClientException;
 
     Invoice getInvoice(int id)
