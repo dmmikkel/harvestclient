@@ -17,3 +17,5 @@ Example that fetches all users:
     {
         // Do something
     }
+
+`subdomain` is the subdomain of your harvest account (e.g. https://**subdomain**.harvestapp.com
