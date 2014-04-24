@@ -106,7 +106,7 @@ Gets all task assignments for a project.
 
 Gets all task assignments for a project updated since `updatedSince`.
 
-### getRecentInvoices(GetLatestInvoicesParameters params)
+### getRecentInvoices(GetRecentInvoicesParameters params)
 
 Gets the 50 most recent invoices.
 
