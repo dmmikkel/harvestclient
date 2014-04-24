@@ -135,3 +135,17 @@ Gets all invoice payments for an invoice.
 ### getInvoicePayment(int invoiceId, int id)
 
 Gets an invoice payment for an invoice.
+
+## Exceptions
+
+Any client method can throw a HarvestClientException.
+
+### MissingParameterException
+
+Will be thrown if a required parameter is missing.
+
+### ThrottleLimitReachedException
+
+Will be thrown if the Harvest API throttle is reached.
+
+If you encounter this you should consider caching.
