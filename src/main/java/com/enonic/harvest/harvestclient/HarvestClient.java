@@ -70,7 +70,7 @@ public interface HarvestClient
     TaskAssignmentCollection getTaskAssignments(int projectId, Date updatedSince)
             throws HarvestClientException;
 
-    InvoiceCollection getLatestInvoices(GetLatestInvoicesParameters params)
+    InvoiceCollection getRecentInvoices(GetLatestInvoicesParameters params)
             throws HarvestClientException;
 
     Invoice getInvoice(int id)

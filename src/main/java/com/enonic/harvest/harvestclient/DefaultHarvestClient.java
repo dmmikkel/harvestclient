@@ -271,7 +271,7 @@ class DefaultHarvestClient
     }
 
     @Override
-    public InvoiceCollection getLatestInvoices(GetLatestInvoicesParameters params)
+    public InvoiceCollection getRecentInvoices(GetLatestInvoicesParameters params)
             throws HarvestClientException
     {
         List<NameValuePair> urlParams = new ArrayList<NameValuePair>();
