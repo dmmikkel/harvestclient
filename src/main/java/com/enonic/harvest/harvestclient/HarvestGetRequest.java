@@ -2,12 +2,10 @@ package com.enonic.harvest.harvestclient;
 
 import com.enonic.harvest.harvestclient.exceptions.HarvestClientException;
 import com.enonic.harvest.harvestclient.exceptions.ThrottleLimitReachedException;
-import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.protocol.HTTP;
 
 import java.io.IOException;
 import java.io.InputStream;
