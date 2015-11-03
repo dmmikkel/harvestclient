@@ -34,6 +34,9 @@ public class User
 
     @XmlElement(name = "default-hourly-rate")
     private BigDecimal defaultHourlyRate;
+    
+    @XmlElement(name = "cost-rate")
+    private BigDecimal costRate;
 
     @XmlElement(name = "is-active")
     private boolean isActive;
@@ -108,6 +111,16 @@ public class User
     public void setDefaultHourlyRate(BigDecimal defaultHourlyRate)
     {
         this.defaultHourlyRate = defaultHourlyRate;
+    }
+
+    public BigDecimal getCostRate()
+    {
+        return costRate;
+    }
+
+    public void setCostRate(BigDecimal costRate)
+    {
+        this.costRate = costRate;
     }
 
     public boolean isActive()
