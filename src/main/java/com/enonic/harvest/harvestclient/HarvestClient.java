@@ -90,4 +90,7 @@ public interface HarvestClient
 
     InvoicePayment getInvoicePayment(int invoiceId, int id)
             throws HarvestClientException;
+
+    ExpenseCollection getProjectExpensesWithinTimeframe(int projectId, Date fromDate, Date toDate)
+            throws HarvestClientException;
 }

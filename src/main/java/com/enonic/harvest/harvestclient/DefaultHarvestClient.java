@@ -2,10 +2,10 @@ package com.enonic.harvest.harvestclient;
 
 import com.enonic.harvest.harvestclient.exceptions.HarvestClientException;
 import com.enonic.harvest.harvestclient.exceptions.MissingParameterException;
+import com.enonic.harvest.harvestclient.models.*;
+import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByProjectParameters;
 import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByUserParameters;
 import com.enonic.harvest.harvestclient.parameters.GetRecentInvoicesParameters;
-import com.enonic.harvest.harvestclient.parameters.GetDayEntriesByProjectParameters;
-import com.enonic.harvest.harvestclient.models.*;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
@@ -334,6 +334,24 @@ class DefaultHarvestClient
             throws HarvestClientException
     {
         return InvoicePayment.fromInputStream(this.getInputStream("/invoices/%s/payments/%s", invoiceId, id));
+    }
+
+    @Override
+    public ExpenseCollection getProjectExpensesWithinTimeframe(int projectId, Date fromDate, Date toDate) throws HarvestClientException
+    {
+        String toDateUrlString;
+        String fromDateUrlString;
+        try
+        {
+            toDateUrlString = URLEncoder.encode(this.dateFormatter.format(toDate), "utf-8");
+            fromDateUrlString = URLEncoder.encode(this.dateFormatter.format(fromDate), "utf-8");
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            throw new HarvestClientException("Unsupported encoding.", e);
+        }
+
+        return ExpenseCollection.fromInputStream(this.getInputStream("/projects/%s/expenses?from=%s&to=%s", projectId, fromDateUrlString, toDateUrlString));
     }
 
     private InputStream getInputStream(String url, Object... args)
